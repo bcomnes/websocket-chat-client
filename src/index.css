@@ -1,0 +1,25 @@
+html {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  margin:0;
+}
+
+.container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.chat-window {
+  flex-grow: 1;
+  border: solid;
+  padding:0.5rem;
+  font-family: monospace;
+  margin: 0.5rem 0;
+  overflow: scroll;
+}

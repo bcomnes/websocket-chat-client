@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="/bundle.css">
   </head>
   <body>
-    <nav class="top-bar hide-print"></nav>
-    <main></main>
-    <footer>
-    </footer>
+    <div class="container">
+      <nav class="sticky-header">Websocket-chat-client</nav>
+      <main class="chat-window">
+      </main>
+      <footer class="sticky-footer">
+          <input type="text" id="message" name="message">
+          <button id="send-button">Send</button>
+      </footer>
+    </div>
     <script src="/bundle.js"></script>
   </body>
 </html>

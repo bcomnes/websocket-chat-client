@@ -17,7 +17,6 @@
     "watch:css": "run-s 'build:css -- --watch'",
     "watch:js": "budo src/index.js:bundle.js --dir dist --live --open",
     "watch:static": "npm run build:static -- --watch",
-    "watch:icon": "run-s build:icon",
     "clean": "rimraf dist functions && mkdirp dist functions",
     "start": "npm run watch"
   },
@@ -54,5 +53,8 @@
     "standard": "^12.0.1",
     "tape": "^4.6.2",
     "top-bar.css": "^2.0.0"
+  },
+  "dependencies": {
+    "universal-reconnecting-websocket": "^2.0.0"
   }
 }
