@@ -34,7 +34,7 @@ ws.on('error', (err) => {
 })
 
 ws.on('info', (ev) => {
-  console.error(err)
+  console.error(ev)
   const newLine = document.createElement('div')
   newLine.innerText = ev
   cw.appendChild(newLine)
@@ -46,11 +46,9 @@ ws.on('connect', () => { // Handle the connect event maybe
 })
 
 ws.on('state', (state) => { // Handle the connect event maybe
-  if (state === 'waiting')
-  msgBox.setAttribute('disabled', true)
+  if (state === 'waiting') { msgBox.setAttribute('disabled', true) }
   sendButton.setAttribute('disabled', true)
 })
-
 
 const handleSend = (ev) => {
   const msg = msgBox.value
@@ -67,17 +65,16 @@ const handleSend = (ev) => {
     })
   }
 
-  msgBox.value = ""
+  msgBox.value = ''
 }
 
 sendButton.addEventListener('click', handleSend)
 
-msgBox.addEventListener("keyup", function(event) {
-  event.preventDefault();
+msgBox.addEventListener('keyup', function (event) {
+  event.preventDefault()
   if (event.keyCode === 13) {
     handleSend(event)
   }
 })
-
 
 ws.start()
