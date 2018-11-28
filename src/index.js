@@ -51,7 +51,8 @@ ws.on('state', (state) => { // Handle the connect event maybe
   sendButton.setAttribute('disabled', true)
 })
 
-sendButton.addEventListener('click', (ev) => {
+
+const handleSend = (ev) => {
   const msg = msgBox.value
 
   if (msg.startsWith('/name')) {
@@ -67,6 +68,15 @@ sendButton.addEventListener('click', (ev) => {
   }
 
   msgBox.value = ""
+}
+
+sendButton.addEventListener('click', handleSend)
+
+msgBox.addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    handleSend(event)
+  }
 })
 
 
